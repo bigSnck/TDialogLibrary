@@ -1,0 +1,2 @@
+include ':app', ':dialoglibrary'
+rootProject.name='DialogDemo'

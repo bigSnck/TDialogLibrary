@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/x_ui_s_list_item_bg_with_border_none"
+    android:clickable="true"
+    android:gravity="center"
+
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/x_dialog_list_item_tv"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+
+        android:ellipsize="end"
+        android:gravity="left"
+        android:lineSpacingExtra="3dp"
+        android:maxLines="1"
+        android:paddingLeft="24dp"
+        android:paddingTop="10dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="10dp"
+        android:text="确定要发送吗?"
+        android:textColor="@color/xui_config_color_gray_4"
+        android:textSize="16sp"></TextView>
+    <ImageView
+        android:id="@+id/x_dialog_list_item_iv"
+
+        android:layout_width="wrap_content"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ui_s_checkbox">
+
+    </ImageView>
+</LinearLayout>
+

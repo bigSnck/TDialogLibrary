@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/x_dialog_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/ui_s_linearlayout"
+        android:gravity="center"
+
+        android:orientation="vertical"
+        android:paddingTop="12dp"
+        >
+
+
+        <TextView
+            android:id="@+id/x_dialog_editext_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:lineSpacingExtra="2dp"
+            android:paddingLeft="24dp"
+            android:paddingTop="12dp"
+            android:paddingRight="24dp"
+            android:paddingBottom="6dp"
+            android:text="标题"
+            android:textColor="@color/xui_config_color_black"
+            android:textSize="17sp">
+
+        </TextView>
+
+        <com.zthy.dialog.scrollview.XUIWrapContentScrollView
+
+            android:id="@+id/x_dialog_editext_content_scrollview"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginBottom="12dp"
+            android:scrollbars="none">
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+
+
+                android:id="@+id/x_dialog_editext_content_et"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/x_ui_editext_background"
+
+                android:hint="在此输入您的昵称"
+                android:paddingBottom="5dp"
+                android:textColor="@color/xui_config_color_gray_4"
+                android:textColorHint="@color/xui_config_color_gray_4"
+                android:textSize="16sp"></androidx.appcompat.widget.AppCompatEditText>
+
+
+        </com.zthy.dialog.scrollview.XUIWrapContentScrollView>
+
+    </LinearLayout>
+
+</merge>
