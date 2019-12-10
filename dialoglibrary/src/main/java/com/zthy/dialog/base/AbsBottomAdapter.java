@@ -9,9 +9,9 @@ import java.util.List;
  */
 public abstract class AbsBottomAdapter {
 
-    abstract int size();//个数
+    public abstract int size();//个数
 
-    abstract View getView(int postion);//获得底部按钮
+    public abstract View getView(int postion);//获得底部按钮
 
     public abstract List<? extends Object> getDataList();
 

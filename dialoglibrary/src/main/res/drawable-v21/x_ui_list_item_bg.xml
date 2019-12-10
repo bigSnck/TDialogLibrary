@@ -16,16 +16,6 @@
 
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="@color/xui_drawable_color_list_pressed">
-    <shape android:shape="rectangle">
-        <solid android:color="@color/xui_config_color_white"></solid>
+    <item android:drawable="@color/xui_config_color_white"></item>
 
-        <!-- android:radius 圆角的半径 -->
-        <corners
-            android:bottomLeftRadius="5dp"
-            android:bottomRightRadius="5dp"
-            android:radius="2dp"
-            android:topLeftRadius="5dp"
-            android:topRightRadius="5dp" />
-
-    </shape>
 </ripple>

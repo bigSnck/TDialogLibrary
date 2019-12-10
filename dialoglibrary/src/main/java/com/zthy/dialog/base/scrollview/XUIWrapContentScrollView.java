@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.zthy.dialog.scrollview;
+package com.zthy.dialog.base.scrollview;
 
 import android.content.Context;
 import android.util.AttributeSet;

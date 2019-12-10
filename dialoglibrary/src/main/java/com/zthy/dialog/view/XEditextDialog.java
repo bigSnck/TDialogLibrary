@@ -1,18 +1,19 @@
-package com.zthy.dialog;
+package com.zthy.dialog.view;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.AppCompatEditText;
 
 
+import com.zthy.dialog.R;
 import com.zthy.dialog.base.AbsDialog;
-import com.zthy.dialog.scrollview.XUIWrapContentScrollView;
+import com.zthy.dialog.base.XLinearLayout;
+import com.zthy.dialog.base.scrollview.XUIWrapContentScrollView;
 import com.zthy.dialog.utils.DisplayUtils;
 
 /**
@@ -21,7 +22,7 @@ import com.zthy.dialog.utils.DisplayUtils;
 
 public class XEditextDialog extends AbsDialog {
 
-    private LinearLayout mContainer;
+    private XLinearLayout mContainer;
 
 
     private TextView mTvCancle;//取消
@@ -49,7 +50,7 @@ public class XEditextDialog extends AbsDialog {
     @Override
     public ViewGroup setDiaglogContanierParam() {
         mContainer = findViewById(R.id.x_dialog_container);
-
+        mContainer.setRadius(20);
         return mContainer;
     }
 

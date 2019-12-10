@@ -1,21 +1,22 @@
-package com.zthy.dialog;
+package com.zthy.dialog.view;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.zthy.dialog.R;
 import com.zthy.dialog.adapter.CommonRecyclerAdapter;
 import com.zthy.dialog.adapter.OnItemCommonClickListener;
 import com.zthy.dialog.base.AbsDialog;
 import com.zthy.dialog.base.CheckMode;
-import com.zthy.dialog.base.DialogBaseItemBean;
-import com.zthy.dialog.scrollview.XUIWrapContentScrollView;
+import com.zthy.dialog.base.AbsDialogBaseContentItemBean;
+import com.zthy.dialog.base.XLinearLayout;
+import com.zthy.dialog.base.scrollview.XUIWrapContentScrollView;
 import com.zthy.dialog.utils.DisplayUtils;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import java.util.List;
 
 public class XListDialog extends AbsDialog {
 
-    private LinearLayout mContainer;
+    private XLinearLayout mContainer;
 
 
     private TextView mTvCancle;//取消
@@ -52,7 +53,7 @@ public class XListDialog extends AbsDialog {
     public ViewGroup setDiaglogContanierParam() {
         mContainer = findViewById(R.id.x_dialog_container);
 
-       // mContainer.setRadius(mBuilder.mRadius);//设置背景圆角
+        mContainer.setRadius(20);//设置背景圆角
 
         return mContainer;
     }
@@ -144,7 +145,7 @@ public class XListDialog extends AbsDialog {
      * @param <D>
      * @return
      */
-    public <D extends DialogBaseItemBean> List<D> getCheckedData() {
+    public <D extends AbsDialogBaseContentItemBean> List<D> getCheckedData() {
         List<D> mResultList = new ArrayList();
         mResultList.clear();
 
@@ -152,7 +153,7 @@ public class XListDialog extends AbsDialog {
 
             for (int i = 0; i < mBuilder.mDataList.size(); i++) {
                 D result = (D) mBuilder.mDataList.get(i);
-                if (result instanceof DialogBaseItemBean) {
+                if (result instanceof AbsDialogBaseContentItemBean) {
                     if (result.isCheecked()) {
                         mResultList.add(result);
                     }
@@ -185,11 +186,11 @@ public class XListDialog extends AbsDialog {
      * @param position
      * @param mDataList
      */
-    private void upCheckData(int position, List<DialogBaseItemBean> mDataList) {
+    private void upCheckData(int position, List<AbsDialogBaseContentItemBean> mDataList) {
 
         if (mBuilder.mCheckMode == CheckMode.SINGLE) {
 
-            for (DialogBaseItemBean itemBean : mDataList) {
+            for (AbsDialogBaseContentItemBean itemBean : mDataList) {
                 if (itemBean.isCheecked()) {
                     itemBean.setCheecked(false);
                     mBuilder.mAdaper.notifyItemChanged(position);
@@ -295,7 +296,7 @@ public class XListDialog extends AbsDialog {
         }
 
 
-        public <D extends DialogBaseItemBean> Builder setAdapter(List<D> data, RecyclerView.Adapter adaper) {
+        public <D extends AbsDialogBaseContentItemBean> Builder setAdapter(List<D> data, RecyclerView.Adapter adaper) {
 
             this.mAdaper = adaper;
             this.mDataList = data;

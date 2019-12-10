@@ -1,6 +1,8 @@
-package com.zthy.dialog.base;
+package com.zthy.dialog.view.adapter;
 
-public class DialogDefautItemBean extends DialogBaseItemBean {
+import com.zthy.dialog.base.AbsDialogBaseContentItemBean;
+
+public class DefautItAbsDialogContentContentItemBean extends AbsDialogBaseContentItemBean {
 
     private String name;
 
@@ -18,7 +20,7 @@ public class DialogDefautItemBean extends DialogBaseItemBean {
         super.setText(name);//只要把想要显示的内容设置到text里面就可以了
     }
 
-    public DialogDefautItemBean(String text, int id, String name) {
+    public DefautItAbsDialogContentContentItemBean(String text, int id, String name) {
         super(text, id);
         this.name = name;
     }

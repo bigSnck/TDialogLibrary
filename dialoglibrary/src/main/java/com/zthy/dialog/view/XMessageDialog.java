@@ -1,20 +1,21 @@
-package com.zthy.dialog;
+package com.zthy.dialog.view;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.zthy.dialog.R;
 import com.zthy.dialog.base.AbsDialog;
-import com.zthy.dialog.scrollview.XUIWrapContentScrollView;
+import com.zthy.dialog.base.XLinearLayout;
+import com.zthy.dialog.base.scrollview.XUIWrapContentScrollView;
 import com.zthy.dialog.utils.DisplayUtils;
 
 public class XMessageDialog extends AbsDialog {
 
-    private LinearLayout mContainer;
+    private XLinearLayout mContainer;
 
     private TextView mTvContntText;//内容控件
 
@@ -40,6 +41,8 @@ public class XMessageDialog extends AbsDialog {
     @Override
     public ViewGroup setDiaglogContanierParam() {
         mContainer = findViewById(R.id.x_dialog_container);
+
+        mContainer.setRadius(20);
         return mContainer;
     }
 

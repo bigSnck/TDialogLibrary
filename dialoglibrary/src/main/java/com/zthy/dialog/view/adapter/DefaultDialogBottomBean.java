@@ -1,4 +1,4 @@
-package com.zthy.dialog.base;
+package com.zthy.dialog.view.adapter;
 
 public  class DefaultDialogBottomBean {
 

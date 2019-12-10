@@ -9,16 +9,14 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.zthy.dialog.R;
 import com.zthy.dialog.utils.DisplayUtils;
-
-import org.w3c.dom.Text;
+import com.zthy.dialog.view.adapter.DefaultDialogBottomAdapter;
+import com.zthy.dialog.view.adapter.DefaultDialogBottomBean;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 
 public abstract class AbsDialog extends Dialog {
@@ -79,14 +77,14 @@ public abstract class AbsDialog extends Dialog {
 
 
     /**
-     * 获得所有底部bottomView
+     * 获得底部bottomView,可以获取设置文字的大小，颜色，内容，是否可以点击等
      *
      * @return
      */
     public View getBottomView(int postion) {
 
         if (postion < mBottomView.size()) {
-            return mBuilder.mAbsBottomAdapter.getView(postion);
+            return mBottomView.get(postion);
 
         } else {
             throw new ArrayIndexOutOfBoundsException();
@@ -225,6 +223,7 @@ public abstract class AbsDialog extends Dialog {
                 @Override
                 public void onClick(View v) {
                     if (null != mBuilder.mBottomSelcetCallback) {
+
                         mBuilder.mBottomSelcetCallback.onSelectBottomItem(postion, mView);//设置点击事件
 
                     }

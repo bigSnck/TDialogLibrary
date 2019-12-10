@@ -5,18 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.zthy.dialog.XEditextDialog;
-import com.zthy.dialog.XListDialog;
-import com.zthy.dialog.XMessageDialog;
+import com.zthy.dialog.view.XEditextDialog;
+import com.zthy.dialog.view.XListDialog;
+import com.zthy.dialog.view.XMessageDialog;
 import com.zthy.dialog.base.AbsDialog;
 import com.zthy.dialog.base.CheckMode;
-import com.zthy.dialog.base.DialogDefautItemBean;
-import com.zthy.dialog.base.DialogListAdapter;
+import com.zthy.dialog.view.adapter.DefautItAbsDialogContentContentItemBean;
+import com.zthy.dialog.view.adapter.DialogListAdapter;
 import com.zthy.dialog.base.IDialogBottomSelcetCallback;
-import com.zthy.tosatlib.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private XMessageDialog mMessageDialog;
     private XListDialog mListDialog;
     private XEditextDialog mEditextDialog;
-
 
 
     @Override
@@ -96,12 +92,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSelectBottomItem(int position, View view) {
 
+
                     }
                 }).build();
 
 
         mMessageDialog.show();
-
 
     }
 
@@ -125,9 +121,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void creatDialog4() {
 
-        final List<DialogDefautItemBean> mList = new ArrayList<>();
+        final List<DefautItAbsDialogContentContentItemBean> mList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            mList.add(new DialogDefautItemBean("aa" + i, i, "aa" + i));
+            mList.add(new DefautItAbsDialogContentContentItemBean("aa" + i, i, "aa" + i));
         }
 
 
@@ -146,9 +142,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void creatDialog5() {
 
-        final List<DialogDefautItemBean> mList = new ArrayList<>();
+        final List<DefautItAbsDialogContentContentItemBean> mList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            mList.add(new DialogDefautItemBean("aa" + i, i, "aa" + i));
+            mList.add(new DefautItAbsDialogContentContentItemBean("aa" + i, i, "aa" + i));
         }
 
 
@@ -165,9 +161,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void creatDialog6() {
-        final List<DialogDefautItemBean> mList = new ArrayList<>();
+        final List<DefautItAbsDialogContentContentItemBean> mList = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
-            mList.add(new DialogDefautItemBean("aa" + i, i, "aa" + i));
+            mList.add(new DefautItAbsDialogContentContentItemBean("aa" + i, i, "aa" + i));
         }
 
 

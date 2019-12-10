@@ -1,4 +1,4 @@
-package com.zthy.dialog.base;
+package com.zthy.dialog.view.adapter;
 
 import android.content.Context;
 import android.widget.ImageView;
@@ -10,14 +10,14 @@ import com.zthy.dialog.adapter.ViewHolder;
 
 import java.util.List;
 
-public class DialogListAdapter extends CommonRecyclerAdapter<DialogDefautItemBean> {
-    public DialogListAdapter(Context context, List<DialogDefautItemBean> data, int layoutId) {
+public class DialogListAdapter extends CommonRecyclerAdapter<DefautItAbsDialogContentContentItemBean> {
+    public DialogListAdapter(Context context, List<DefautItAbsDialogContentContentItemBean> data, int layoutId) {
         super(context, data, layoutId);
 
     }
 
     @Override
-    public void convert(ViewHolder holder, DialogDefautItemBean item) {
+    public void convert(ViewHolder holder, DefautItAbsDialogContentContentItemBean item) {
 
 
         holder.setText(R.id.x_dialog_list_item_tv, item.getText());

@@ -1,16 +1,16 @@
 package com.zthy.dialog.base;
 
-public abstract class DialogBaseItemBean {
+public abstract class AbsDialogBaseContentItemBean {
 
-    public DialogBaseItemBean(String text, int id) {
+    public AbsDialogBaseContentItemBean(String text, int id) {
         this.text = text;
         this.id = id;
     }
 
-    String text;//显示的内容
-    int id;//列表的id
+    public String text;//显示的内容
+    public int id;//列表的id
 
-    boolean isCheecked;
+    public boolean isCheecked;
 
     public String getText() {
         return text;

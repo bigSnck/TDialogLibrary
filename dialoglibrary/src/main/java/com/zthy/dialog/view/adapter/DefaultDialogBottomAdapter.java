@@ -1,4 +1,4 @@
-package com.zthy.dialog.base;
+package com.zthy.dialog.view.adapter;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.zthy.dialog.R;
+import com.zthy.dialog.base.AbsBottomAdapter;
 
 import java.util.List;
 
@@ -21,16 +22,14 @@ public class DefaultDialogBottomAdapter extends AbsBottomAdapter {
         mBottomTextList = list;
     }
 
+
     @Override
-    int size() {
+    public int size() {
         return mBottomTextList.size();
     }
 
     @Override
-    View getView(int postion) {
-
-        // XDialogAction btAction = new XDialogAction.Builder(mContext).setText(mBottomTextList.get(postion).getText()).build();
-
+    public View getView(int postion) {
 
         TextView btTextView = new TextView(mContext);
         btTextView.setGravity(Gravity.CENTER);
@@ -38,11 +37,12 @@ public class DefaultDialogBottomAdapter extends AbsBottomAdapter {
         btTextView.setText(mBottomTextList.get(postion).getText());
         btTextView.setTextColor(mContext.getResources().getColorStateList(mBottomTextList.get(postion).getColor()));
 
-        btTextView.setBackgroundResource(R.drawable.x_ui_s_list_item_bg_with_border_none);
+        btTextView.setBackgroundResource(R.drawable.x_ui_list_item_bg);
         btTextView.setClickable(true);
 
         return btTextView;
     }
+
 
     @Override
     public List<? extends Object> getDataList() {

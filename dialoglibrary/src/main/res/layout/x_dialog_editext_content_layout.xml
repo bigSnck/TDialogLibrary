@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <com.zthy.dialog.base.XLinearLayout
         android:id="@+id/x_dialog_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
 
         </TextView>
 
-        <com.zthy.dialog.scrollview.XUIWrapContentScrollView
+        <com.zthy.dialog.base.scrollview.XUIWrapContentScrollView
 
             android:id="@+id/x_dialog_editext_content_scrollview"
 
@@ -64,8 +64,8 @@
                 android:textSize="16sp"></androidx.appcompat.widget.AppCompatEditText>
 
 
-        </com.zthy.dialog.scrollview.XUIWrapContentScrollView>
+        </com.zthy.dialog.base.scrollview.XUIWrapContentScrollView>
 
-    </LinearLayout>
+    </com.zthy.dialog.base.XLinearLayout>
 
 </merge>
