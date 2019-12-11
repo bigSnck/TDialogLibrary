@@ -17,4 +17,26 @@ dependencies {
 }
 ```
 
-### 具体使用Demo
+### 具体使用Demo<br>
+#### 通常普通用法<br>
+##### 代码：<br>
+```
+mMessageDialog = new XMessageDialog.Builder(mContext)
+                .setTitleText("标题")//设置标题
+                .setMessage("确定要发送吗?")///设置内容
+                .setShowCheck(false)//是否显示checkbox
+                .setBottomParameter("确定", R.color.app_color_blue)
+                .setBottomStyle(AbsDialog.BottomStyle.STYLE_1)
+                .setDialogBottomSelcetCallback(new IDialogBottomSelcetCallback() {
+                    @Override
+                    public void onSelectBottomItem(int position, View view) {
+
+
+                    }
+                }).build();
+
+
+mMessageDialog.show();
+```
+#### 效果图：<br>
+
