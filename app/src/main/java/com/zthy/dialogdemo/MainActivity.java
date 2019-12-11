@@ -86,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
                 .setTitleText("标题")//设置标题
                 .setMessage("确定要发送吗?")///设置内容
                 .setShowCheck(false)//是否显示checkbox
-                .setBottomParameter("确22定", R.color.app_color_blue)
-                .setBottomStyle(AbsDialog.BottomStyle.STYLE_1)
+                .setBottomParameter("确定", R.color.app_color_blue)
+                .setBottomStyle(AbsDialog.BottomStyle.STYLE_2)
                 .setDialogBottomSelcetCallback(new IDialogBottomSelcetCallback() {
                     @Override
                     public void onSelectBottomItem(int position, View view) {
