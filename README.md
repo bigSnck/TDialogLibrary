@@ -38,5 +38,61 @@ mMessageDialog = new XMessageDialog.Builder(mContext)
 
 mMessageDialog.show();
 ```
-#### 效果图：<br>
+##### 效果图：<br>
 
+<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_a.png" width="300" height="500"/>   <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_a1.png" width="300" height="500"/>  <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_a2.png" width="300" height="500"/>
+
+#### 多选和单选的dialog <br>
+##### 代码 <br>
+```
+//退出登录
+mMessageDialog = new XMessageDialog.Builder(mContext).setTitleText("退出后是否删除账号信息").setMessage("删除账号信息").setShowCheck(true).build();
+   mMessageDialog.show();
+
+
+
+final List<DefautItAbsDialogContentContentItemBean> mList = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            mList.add(new DefautItAbsDialogContentContentItemBean("aa" + i, i, "aa" + i));
+        }
+
+
+final DialogListAdapter mAdaper = new DialogListAdapter(mContext, mList, R.layout.x_dialog_item_content_layout);
+
+//单选
+mListDialog = new XListDialog.Builder(mContext)
+                .setTitleText("")
+                .setCheckMode(CheckMode.SINGLE)//单选
+                .setAdapter(mList, mAdaper)
+                .build();
+
+        mListDialog.show();
+
+//多选
+mListDialog = new XListDialog.Builder(mContext)
+                .setTitleText("")
+                .setCheckMode(CheckMode.MULTI)//多选
+                .setAdapter(mList, mAdaper)
+                .build();
+
+        mListDialog.show();
+```
+##### 效果图<br>
+
+<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_b.png" width="300" height="500"/>   <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_b1.png" width="300" height="500"/>
+ <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_b2.png" width="300" height="500"/>
+ 
+ 
+ #### 输入框dialog <br>
+ ##### 代码 <br>
+ ``` 
+  mEditextDialog = new XEditextDialog.Builder(mContext)
+                .setTitleText("标题")
+                .build();
+  mEditextDialog.show();
+  mEditextDialog.getEtContent();//输入框里面的内容
+ ```
+ ##### 效果图<br>
+ <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_c.png" width="300" height="500"/> 
+ 
+  #### 更多用法可以查看源码 谢谢！！ <br>
