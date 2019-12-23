@@ -108,8 +108,8 @@ mListDialog = new XListDialog.Builder(mContext)
    mXTipDialog.show();
    ``` 
 ##### 效果图<br>
-<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_loading.png" width="300" height="500"/>     <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_success.png" width="300" height="500"/>     <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_fail.png" width="300" height="500"/> 
-<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_info.png" width="300" height="500"/> 
+<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_loading.jpg" width="300" height="500"/>     <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_success.jpg" width="300" height="500"/>     <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_fail.jpg" width="300" height="500"/> 
+<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_info.jpg" width="300" height="500"/> 
  
  
   #### 更多用法可以查看源码 谢谢！！ <br>
