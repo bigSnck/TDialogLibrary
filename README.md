@@ -79,7 +79,8 @@ mListDialog = new XListDialog.Builder(mContext)
 ```
 ##### 效果图<br>
 
-<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_b.png" width="300" height="500"/>   <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_b1.png" width="300" height="500"/>
+<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_b.png" width="300" height="500"/> 
+<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_b1.png" width="300" height="500"/>
  <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_b2.png" width="300" height="500"/>
  
  
@@ -94,5 +95,21 @@ mListDialog = new XListDialog.Builder(mContext)
  ```
  ##### 效果图<br>
  <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/style_c.png" width="300" height="500"/> 
+ 
+ 
+  #### 正在加载中,加载成功,加载失败,加载图标<br>
+  ##### 代码 <br>
+   ``` 
+   mXTipDialog = new XTipDialog.Builder(mContext)
+               .setTipWord("正在加载中")
+	       .setIconType(IconType.ICON_TYPE_LOADING) //ICON_TYPE_SUCCESS,ICON_TYPE_FAIL,ICON_TYPE_INFO
+	       .setCancelable(true)//是否能通过点击周围取消 true：能 false:不能
+	       .create();
+   mXTipDialog.show();
+   ``` 
+##### 效果图<br>
+<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_loading.png" width="300" height="500"/>     <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_success.png" width="300" height="500"/>     <img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_fail.png" width="300" height="500"/> 
+<img src="https://github.com/bigSnck/TDialogLibrary/blob/master/image/dialog_info.png" width="300" height="500"/> 
+ 
  
   #### 更多用法可以查看源码 谢谢！！ <br>
