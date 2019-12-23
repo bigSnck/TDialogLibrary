@@ -5,84 +5,116 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/ll_container"
     tools:context=".MainActivity">
-
-    <Button
-
-        android:id="@+id/dialog_bt_1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="消息类型对话框"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+
+                android:id="@+id/dialog_bt_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="消息类型对话框"
+           />
 
 
-    <Button
+            <Button
 
-        android:id="@+id/dialog_bt_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="消息类型对话框（很长文案）"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/dialog_bt_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="消息类型对话框（很长文案）"
+   />
 
-    <Button
+            <Button
 
-        android:id="@+id/dialog_bt_3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="带CheckBox的消息确认框"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/dialog_bt_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="带CheckBox的消息确认框"
+            />
 
-    <Button
+            <Button
 
-        android:id="@+id/dialog_bt_4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="单选菜单类型对话框"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/dialog_bt_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="单选菜单类型对话框"
+/>
 
-    <Button
+            <Button
 
-        android:id="@+id/dialog_bt_5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="多选菜单类型对话框"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/dialog_bt_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="多选菜单类型对话框"
+             />
 
-    <Button
+            <Button
 
-        android:id="@+id/dialog_bt_6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="多选菜单类型对话框(item数量很多)"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/dialog_bt_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="多选菜单类型对话框(item数量很多)"
+   />
 
-    <Button
+            <Button
 
-        android:id="@+id/dialog_bt_7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="带输入框的对话框"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/dialog_bt_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="带输入框的对话框"
+ />
+
+            <Button
+
+                android:id="@+id/dialog_bt_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="正在加载中"
+       />
+
+            <Button
+
+                android:id="@+id/dialog_bt_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载成功"
+    />
+            <Button
+
+                android:id="@+id/dialog_bt_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载失败"
+/>
+
+            <Button
+
+                android:id="@+id/dialog_bt_11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="没有图标"
+    />
+
+            <Button
+
+                android:id="@+id/dialog_bt_12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="信息"
+/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
 
 </LinearLayout>

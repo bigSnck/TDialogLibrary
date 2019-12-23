@@ -16,10 +16,6 @@
 -->
 
 <resources>
-    <!--*********************************************
-    *              Config Color                  *
-    **********************************************-->
-
 
     <color name="xui_config_color_blue">#1B88EE</color>
 
@@ -58,9 +54,5 @@
     <color name="xui_drawable_color_list_separator">#DEE0E2</color>
 
 
-    <color name="colorPrimary">#1B88EE</color>
-    <color name="colorPrimaryDark">#1B88EE</color>
-    <color name="colorAccent">#F49423</color>
-    <color name="colorPrimaryOverlay">#cc0094ff</color>
 
 </resources>

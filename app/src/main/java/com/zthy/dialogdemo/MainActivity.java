@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
+import com.zthy.dialog.base.TLoadView;
+import com.zthy.dialog.view.Contanst.IconType;
 import com.zthy.dialog.view.XEditextDialog;
 import com.zthy.dialog.view.XListDialog;
 import com.zthy.dialog.view.XMessageDialog;
 import com.zthy.dialog.base.AbsDialog;
 import com.zthy.dialog.base.CheckMode;
+import com.zthy.dialog.view.XTipDialog;
 import com.zthy.dialog.view.adapter.DefautItAbsDialogContentContentItemBean;
 import com.zthy.dialog.view.adapter.DialogListAdapter;
 import com.zthy.dialog.base.IDialogBottomSelcetCallback;
@@ -24,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private XMessageDialog mMessageDialog;
     private XListDialog mListDialog;
     private XEditextDialog mEditextDialog;
-
+    private LinearLayout mLlContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mContext = this;
 
 
+        mLlContainer = findViewById(R.id.ll_container);
         findViewById(R.id.dialog_bt_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,6 +81,39 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 creatDialog7();
+            }
+        });
+
+        findViewById(R.id.dialog_bt_8).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                creatDialog8();
+            }
+        });
+
+        findViewById(R.id.dialog_bt_9).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                creatDialog9();
+            }
+        });
+        findViewById(R.id.dialog_bt_10).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                creatDialog10();
+            }
+        });
+        findViewById(R.id.dialog_bt_11).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                creatDialog11();
+            }
+        });
+
+        findViewById(R.id.dialog_bt_12).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                creatDialog12();
             }
         });
     }
@@ -187,6 +225,47 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         mEditextDialog.show();
+    }
+
+
+    private void creatDialog8() {
+
+
+        XTipDialog mXTipDialog = new XTipDialog.Builder(mContext).setTipWord("正在加载中").setIconType(IconType.ICON_TYPE_LOADING).setCancelable(true).create();
+        mXTipDialog.show();
+
+    }
+
+    private void creatDialog9() {
+
+
+        XTipDialog mXTipDialog = new XTipDialog.Builder(mContext).setTipWord("加载成功").setIconType(IconType.ICON_TYPE_SUCCESS).setCancelable(true).create();
+        mXTipDialog.show();
+
+    }
+
+    private void creatDialog10() {
+
+
+        XTipDialog mXTipDialog = new XTipDialog.Builder(mContext).setTipWord("加载失败").setIconType(IconType.ICON_TYPE_FAIL).setCancelable(true).create();
+        mXTipDialog.show();
+
+    }
+
+    private void creatDialog11() {
+
+
+        XTipDialog mXTipDialog = new XTipDialog.Builder(mContext).setTipWord("没有图标").setIconType(IconType.ICON_TYPE_NOTHING).setCancelable(true).create();
+        mXTipDialog.show();
+
+    }
+
+    private void creatDialog12() {
+
+
+        XTipDialog mXTipDialog = new XTipDialog.Builder(mContext).setTipWord("信息").setIconType(IconType.ICON_TYPE_INFO).setCancelable(true).create();
+        mXTipDialog.show();
+
     }
 
 }

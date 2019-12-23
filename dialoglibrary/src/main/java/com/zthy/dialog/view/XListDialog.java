@@ -9,9 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.yt.baseadapterlibrary.TBaseAdapter;
+import com.yt.baseadapterlibrary.view.OnItemClickCallback;
 import com.zthy.dialog.R;
-import com.zthy.dialog.adapter.CommonRecyclerAdapter;
-import com.zthy.dialog.adapter.OnItemCommonClickListener;
+
 import com.zthy.dialog.base.AbsDialog;
 import com.zthy.dialog.base.CheckMode;
 import com.zthy.dialog.base.AbsDialogBaseContentItemBean;
@@ -100,14 +101,13 @@ public class XListDialog extends AbsDialog {
         if (null != mBuilder.mAdaper) {
             mRecyclerView.setAdapter(mBuilder.mAdaper);
 
-            if (mBuilder.mAdaper instanceof CommonRecyclerAdapter) {
-                CommonRecyclerAdapter mAdapter = (CommonRecyclerAdapter) mBuilder.mAdaper;
+            if (mBuilder.mAdaper instanceof TBaseAdapter) {
+                TBaseAdapter mAdapter = (TBaseAdapter) mBuilder.mAdaper;
 
-                mAdapter.setOnItemClickListener(new OnItemCommonClickListener() {
+                mAdapter.setOnItemClickCallback(new OnItemClickCallback() {
                     @Override
-                    public void onItemClick(int position) {
+                    public void onClick(Object o, int position) {
                         upCheckData(position, mBuilder.mDataList);
-
                     }
                 });
             }
