@@ -139,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void creatDialog13() {
 
+
         final List<DefautItAbsDialogContentContentItemBean> mList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             mList.add(new DefautItAbsDialogContentContentItemBean("aa" + i, i, "aa" + i));
