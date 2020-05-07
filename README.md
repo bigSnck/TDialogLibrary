@@ -13,7 +13,7 @@ allprojects {
 #### Step2: 在工程中添加依赖：<br>
 ```
 dependencies {
-	implementation 'com.github.bigSnck:TDialogLibrary:1.0.1'
+	implementation 'com.github.bigSnck:TDialogLibrary:1.0.4'
 }
 ```
 
