@@ -22,14 +22,15 @@ import java.util.List;
 public abstract class AbsDialog extends Dialog {
 
     private Builder mBuilder;
-    private Context mContext;
+
     private ViewGroup mContainer;
     public List<View> mBottomView;
 
 
     public enum BottomStyle {
-        STYLE_1,//带线
-        STYLE_2//不带线
+        STYLE_1,//带线，不均分
+        STYLE_2,//不带线
+        STYLE_3//不带线,均分
     }
 
 
@@ -39,7 +40,6 @@ public abstract class AbsDialog extends Dialog {
 
     public AbsDialog(int themeResId, Builder builder) {
         super(builder.mContext, themeResId);
-        mContext = builder.mContext;
         mBuilder = builder;
         mBottomView = new ArrayList<>();
     }
@@ -92,7 +92,7 @@ public abstract class AbsDialog extends Dialog {
     }
 
 
-    public AbsBottomAdapter getAdapter(){
+    public AbsBottomAdapter getAdapter() {
         return mBuilder.mAbsBottomAdapter;
     }
 
@@ -110,11 +110,11 @@ public abstract class AbsDialog extends Dialog {
         }
         WindowManager.LayoutParams wmlp = window.getAttributes();
         wmlp.width = mBuilder.mWidth;
-        wmlp.gravity = Gravity.CENTER;
+        wmlp.gravity = mBuilder.mGravity;
         window.setAttributes(wmlp);
 
 
-        window.setGravity(Gravity.CENTER);
+        window.setGravity(mBuilder.mGravity);
 
         mContainer = setDiaglogContanierParam();
         setDiaglogTitleParam();
@@ -174,9 +174,10 @@ public abstract class AbsDialog extends Dialog {
             if (mBuilder.mBottomStyle == BottomStyle.STYLE_1) {
                 createHorizontalLine();//横线
                 createStyleButtom(xuiLinearLayout, viewCount);
-            } else {
-
+            } else if (mBuilder.mBottomStyle == BottomStyle.STYLE_2) {
                 xuiLinearLayout.setGravity(Gravity.RIGHT);
+                createStyleButtom(xuiLinearLayout, viewCount);
+            } else {
                 createStyleButtom(xuiLinearLayout, viewCount);
             }
 
@@ -210,11 +211,25 @@ public abstract class AbsDialog extends Dialog {
                     xuiLinearLayout.addView(verticalLine);//绘制竖线并且添加到View里面
                 }
 
-            } else {
+            } else if (mBuilder.mBottomStyle == BottomStyle.STYLE_2) {
                 LinearLayout.LayoutParams okParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 mView.setPadding(DisplayUtils.dp2px(mBuilder.mContext, 12), DisplayUtils.dp2px(mBuilder.mContext, 12), DisplayUtils.dp2px(mBuilder.mContext, 24), DisplayUtils.dp2px(mBuilder.mContext, 12));
                 mView.setLayoutParams(okParams);
                 xuiLinearLayout.addView(mView);
+
+            } else {
+                LinearLayout.LayoutParams okParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT);
+                okParams.weight = 1;
+                mView.setLayoutParams(okParams);
+                mView.setPadding(0, DisplayUtils.dp2px(mBuilder.mContext, 12), 0, DisplayUtils.dp2px(mBuilder.mContext, 12));
+
+                xuiLinearLayout.addView(mView);//底部按钮
+
+                if (viewCount != 1 && i + 1 != viewCount) {
+
+                    View verticalLine = createVerticalLine();
+                    xuiLinearLayout.addView(verticalLine);//绘制竖线并且添加到View里面
+                }
 
             }
 
@@ -243,8 +258,8 @@ public abstract class AbsDialog extends Dialog {
         View mVerticalLineView = new View(mBuilder.mContext);
 
 
-        mVerticalLineView.setBackgroundColor(mBuilder.mContext.getResources().getColor(R.color.xui_config_color_gray_4));
-        LinearLayout.LayoutParams lineParams = new LinearLayout.LayoutParams(2, LinearLayout.LayoutParams.MATCH_PARENT);
+        mVerticalLineView.setBackgroundColor(mBuilder.mContext.getResources().getColor(R.color.xui_bottom_line));
+        LinearLayout.LayoutParams lineParams = new LinearLayout.LayoutParams(1, LinearLayout.LayoutParams.MATCH_PARENT);
 
         mVerticalLineView.setLayoutParams(lineParams);
 
@@ -257,7 +272,7 @@ public abstract class AbsDialog extends Dialog {
 
         View mHorizontalLineView = new View(mBuilder.mContext);
 
-        mHorizontalLineView.setBackgroundColor(mBuilder.mContext.getResources().getColor(R.color.xui_config_color_gray_4));
+        mHorizontalLineView.setBackgroundColor(mBuilder.mContext.getResources().getColor(R.color.xui_bottom_line));
         LinearLayout.LayoutParams lineParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 2);
 
         mHorizontalLineView.setLayoutParams(lineParams);
@@ -274,6 +289,12 @@ public abstract class AbsDialog extends Dialog {
         public Context mContext;
         private int mLayoutId;
         private int mWidth = 304;//dialog宽度
+        private int mGravity = Gravity.CENTER;
+        public View mTitleLayoutView;//标题的布局文件
+        public View mContentLayoutView;//内容的布局文件
+        public View mBottomLayoutView;//底部的布局文件
+
+
         private int mHigh;//dialog的高度
         private boolean mIsCancelTouchOutside;//是否能够取消
 
@@ -293,6 +314,21 @@ public abstract class AbsDialog extends Dialog {
 
         }
 
+        public B setTitleLayoutView(View titleView) {
+            this.mTitleLayoutView = titleView;
+            return (B) this;
+        }
+
+        public B setContentLayoutView(View cotentView) {
+            this.mContentLayoutView = cotentView;
+            return (B) this;
+        }
+
+        public B setBottomLayoutView(View bottomView) {
+            this.mBottomLayoutView = bottomView;
+            return (B) this;
+        }
+
 
         public B setDialogWidthAndHigh(int width, int high) {
 
@@ -301,6 +337,12 @@ public abstract class AbsDialog extends Dialog {
             return (B) this;
         }
 
+
+        public B setGravity(int gravity) {
+
+            this.mGravity = gravity;
+            return (B) this;
+        }
 
         public B setCancelTouchOutside(boolean is) {
 

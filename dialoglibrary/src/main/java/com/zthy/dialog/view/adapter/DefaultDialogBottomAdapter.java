@@ -35,6 +35,7 @@ public class DefaultDialogBottomAdapter extends AbsBottomAdapter {
         btTextView.setGravity(Gravity.CENTER);
 
         btTextView.setText(mBottomTextList.get(postion).getText());
+        btTextView.setTextSize(16);
         btTextView.setTextColor(mContext.getResources().getColorStateList(mBottomTextList.get(postion).getColor()));
 
         btTextView.setBackgroundResource(R.drawable.x_ui_list_item_bg);

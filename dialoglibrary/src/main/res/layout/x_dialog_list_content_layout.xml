@@ -11,34 +11,16 @@
         android:background="@drawable/ui_s_linearlayout"
 
         android:gravity="center"
-
         android:orientation="vertical"
         android:paddingTop="12dp">
 
 
-        <TextView
-            android:id="@+id/x_dialog_list_title_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:gravity="left"
-            android:lineSpacingExtra="2dp"
-            android:paddingLeft="24dp"
-            android:paddingTop="12dp"
-            android:paddingRight="24dp"
-            android:paddingBottom="6dp"
-            android:text="标题"
-            android:textColor="@color/xui_config_color_black"
-            android:textSize="17sp">
-
-        </TextView>
 
         <com.zthy.dialog.base.scrollview.XUIWrapContentScrollView
             android:id="@+id/x_dialog_list_content_scrollview"
             android:layout_width="match_parent"
 
             android:layout_height="match_parent"
-            android:layout_marginBottom="12dp"
             android:layout_weight="1"
             android:scrollbars="none">
 

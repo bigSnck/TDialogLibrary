@@ -9,14 +9,12 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.yt.baseadapterlibrary.TBaseAdapter;
 import com.yt.baseadapterlibrary.view.OnItemClickCallback;
 import com.zthy.dialog.R;
-
 import com.zthy.dialog.base.AbsDialog;
-import com.zthy.dialog.base.CheckMode;
 import com.zthy.dialog.base.AbsDialogBaseContentItemBean;
+import com.zthy.dialog.base.CheckMode;
 import com.zthy.dialog.base.XLinearLayout;
 import com.zthy.dialog.base.scrollview.XUIWrapContentScrollView;
 import com.zthy.dialog.utils.DisplayUtils;
@@ -24,13 +22,10 @@ import com.zthy.dialog.utils.DisplayUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class XListDialog extends AbsDialog {
+public class XBottomListDialog extends AbsDialog {
 
     private XLinearLayout mContainer;
 
-
-    private TextView mTvCancle;//取消
-    private TextView mTvOk;//确定
 
     private TextView mTvTitleText;
 
@@ -40,7 +35,7 @@ public class XListDialog extends AbsDialog {
     private RecyclerView mRecyclerView;
 
 
-    public XListDialog(Builder builder) {
+    public XBottomListDialog(Builder builder) {
 
         super(builder);
 
@@ -66,7 +61,6 @@ public class XListDialog extends AbsDialog {
     @Override
     public void setDiaglogTitleParam() {
 
-
         if (mBuilder.mTitleLayoutView == null) {
             mBuilder.mTitleLayoutView = LayoutInflater.from(mBuilder.mContext).inflate(R.layout.x_dialog_item_title_layout, null);
         }
@@ -86,7 +80,6 @@ public class XListDialog extends AbsDialog {
 
 
         mContainer.addView(mBuilder.mTitleLayoutView,0);
-
     }
 
     /**
@@ -127,27 +120,6 @@ public class XListDialog extends AbsDialog {
     }
 
 
-    /* *//**
-     * 设置底部
-     *//*
-    @Override
-    public void setDiaglogBottomParam() {
-        mTvCancle = findViewById(R.id.x_dialog_list_bottom_cancle_tv);
-        mTvOk = findViewById(R.id.x_dialog_list_bottom_ok_tv);
-
-        mTvCancle.setText(mBuilder.mCanlceText);
-        mTvOk.setText(mBuilder.mOkText);
-
-
-        mTvOk.setTextColor(mBuilder.mContext.getResources().getColorStateList(mBuilder.mOkColor));
-        mTvCancle.setTextColor(mBuilder.mContext.getResources().getColorStateList(mBuilder.mCanlceColor));
-
-
-        mTvOk.setOnClickListener(mBuilder.mOkClickListener);
-        mTvCancle.setOnClickListener(mBuilder.mCancleClickListener);
-    }
-*/
-
     /**
      * 获取已经选中的条目
      *
@@ -171,21 +143,6 @@ public class XListDialog extends AbsDialog {
         }
         return mResultList;
 
-    }
-
-    public TextView getDiaglogBottomCancleTextView() {
-        if (null == mTvCancle) {
-            return null;
-        }
-        return mTvCancle;
-    }
-
-
-    public TextView getDiaglogBottomOkTextView() {
-        if (null == mTvOk) {
-            return null;
-        }
-        return mTvOk;
     }
 
 
@@ -249,8 +206,8 @@ public class XListDialog extends AbsDialog {
         }
 
         @Override
-        public XListDialog build() {
-            return new XListDialog(this);
+        public XBottomListDialog build() {
+            return new XBottomListDialog(this);
         }
 
 
@@ -317,7 +274,7 @@ public class XListDialog extends AbsDialog {
         protected int getContentAreaMaxHeight() {
             if (mContentAreaMaxHeight == -1) {
                 // 屏幕高度的0.85 - 预估的 title 和 action 高度
-                return (int) (DisplayUtils.getScreenHeight(mContext) * 0.85) - DisplayUtils.dp2px(mContext, 100);
+                return (int) (DisplayUtils.getScreenHeight(mContext) * 0.6) - DisplayUtils.dp2px(mContext, 100);
             }
             return mContentAreaMaxHeight;
         }

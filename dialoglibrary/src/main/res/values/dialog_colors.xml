@@ -53,6 +53,6 @@
 
     <color name="xui_drawable_color_list_separator">#DEE0E2</color>
 
-
+    <color name="xui_bottom_line">#E8EBF7</color>
 
 </resources>

@@ -4,17 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.zthy.dialog.base.TLoadView;
 import com.zthy.dialog.view.Contanst.IconType;
+import com.zthy.dialog.view.XBottomListDialog;
+import com.zthy.dialog.view.XBottominStructionsDialog;
 import com.zthy.dialog.view.XEditextDialog;
 import com.zthy.dialog.view.XListDialog;
 import com.zthy.dialog.view.XMessageDialog;
 import com.zthy.dialog.base.AbsDialog;
 import com.zthy.dialog.base.CheckMode;
 import com.zthy.dialog.view.XTipDialog;
+import com.zthy.dialog.view.adapter.DefaultDialogBottomAdapter;
+import com.zthy.dialog.view.adapter.DefaultDialogBottomBean;
 import com.zthy.dialog.view.adapter.DefautItAbsDialogContentContentItemBean;
 import com.zthy.dialog.view.adapter.DialogListAdapter;
 import com.zthy.dialog.base.IDialogBottomSelcetCallback;
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Context mContext;
     private XMessageDialog mMessageDialog;
+    private XBottomListDialog mXBottomDialog;
     private XListDialog mListDialog;
     private XEditextDialog mEditextDialog;
     private LinearLayout mLlContainer;
@@ -39,6 +45,19 @@ public class MainActivity extends AppCompatActivity {
 
 
         mLlContainer = findViewById(R.id.ll_container);
+        findViewById(R.id.dialog_bt_13).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                creatDialog13();
+            }
+        });
+        findViewById(R.id.dialog_bt_0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                creatDialog0();
+            }
+        });
+
         findViewById(R.id.dialog_bt_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,6 +137,63 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void creatDialog13() {
+
+        final List<DefautItAbsDialogContentContentItemBean> mList = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            mList.add(new DefautItAbsDialogContentContentItemBean("aa" + i, i, "aa" + i));
+        }
+        final List<DefaultDialogBottomBean> mBottomList = new ArrayList<>();
+
+        mBottomList.add(new DefaultDialogBottomBean(R.color.xui_config_color_white, "知道了"));
+
+        View mDialogTitleView = LayoutInflater.from(this).inflate(R.layout.dialog_title_structions_layout, mLlContainer, false);
+        View mDialogContentView = LayoutInflater.from(this).inflate(R.layout.dialog_content_structions_layout, mLlContainer, false);
+        View mDialogBottomView = LayoutInflater.from(this).inflate(R.layout.dialog_bottom_structions_layout, mLlContainer, false);
+
+        XBottominStructionsDialog mXBottominStructionsDialog = new XBottominStructionsDialog.Builder(mContext)
+                .setGravity(Gravity.BOTTOM)
+                .setDialogWidthAndHigh(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                .setTitleLayoutView(mDialogTitleView)
+                .setContentLayoutView(mDialogContentView)
+                .setBottomLayoutView(mDialogBottomView)
+                .build();
+
+        mXBottominStructionsDialog.show();
+    }
+
+    private void creatDialog0() {
+
+        final List<DefautItAbsDialogContentContentItemBean> mList = new ArrayList<>();
+        for (int i = 0; i < 30; i++) {
+            mList.add(new DefautItAbsDialogContentContentItemBean("aa" + i, i, "aa" + i));
+        }
+        final List<DefaultDialogBottomBean> mBottomList = new ArrayList<>();
+
+        mBottomList.add(new DefaultDialogBottomBean(R.color.bottom_color, "取消"));
+        mBottomList.add(new DefaultDialogBottomBean(R.color.bottom_color, "确定"));
+
+
+        View mDialogTitleView = LayoutInflater.from(this).inflate(R.layout.dialog_title_layout, null);
+
+        final ContentDialogItemAdapter mAdaper = new ContentDialogItemAdapter(mContext, mList);
+        final DefaultDialogBottomAdapter mBottomAdaper = new DefaultDialogBottomAdapter(mContext, mBottomList);
+
+        mXBottomDialog = new XBottomListDialog.Builder(mContext)
+                .setGravity(Gravity.BOTTOM)
+                .setDialogWidthAndHigh(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                .setTitleText("选择设备")
+                .setBottomStyle(AbsDialog.BottomStyle.STYLE_3)
+
+                .setTitleLayoutView(mDialogTitleView)
+                .setCheckMode(CheckMode.SINGLE)//
+                .setbottomAdapter(mBottomAdaper)
+                .setAdapter(mList, mAdaper)
+                .build();
+
+        mXBottomDialog.show();
+
+    }
 
     private void creatDialog1() {
         mMessageDialog = new XMessageDialog.Builder(mContext)
