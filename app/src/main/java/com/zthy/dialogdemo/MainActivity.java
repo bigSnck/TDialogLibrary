@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         View mDialogTitleView = LayoutInflater.from(this).inflate(R.layout.dialog_title_structions_layout, mLlContainer, false);
         View mDialogContentView = LayoutInflater.from(this).inflate(R.layout.dialog_content_structions_layout, mLlContainer, false);
         View mDialogBottomView = LayoutInflater.from(this).inflate(R.layout.dialog_bottom_structions_layout, mLlContainer, false);
-
+        mDialogBottomView.getBackground().mutate().setAlpha(0);
         XBottominStructionsDialog mXBottominStructionsDialog = new XBottominStructionsDialog.Builder(mContext)
                 .setGravity(Gravity.BOTTOM)
                 .setDialogWidthAndHigh(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)

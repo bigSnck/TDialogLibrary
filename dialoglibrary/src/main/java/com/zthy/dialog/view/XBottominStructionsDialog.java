@@ -51,6 +51,7 @@ public class XBottominStructionsDialog extends BaseDialog {
     public ViewGroup setDiaglogContanierParam() {
         mContainer = findViewById(R.id.x_dialog_container);
         mContainer.setRadius(20);//设置背景圆角
+        mContainer.getBackground().mutate().setAlpha(0);
         return mContainer;
     }
 
