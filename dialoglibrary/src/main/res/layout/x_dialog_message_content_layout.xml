@@ -12,8 +12,6 @@
         android:gravity="center"
 
         android:orientation="vertical"
-        android:paddingTop="12dp"
-
         >
 
         <TextView

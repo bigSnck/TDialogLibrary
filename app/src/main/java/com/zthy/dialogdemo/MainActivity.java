@@ -140,14 +140,6 @@ public class MainActivity extends AppCompatActivity {
     private void creatDialog13() {
 
 
-        final List<DefautItAbsDialogContentContentItemBean> mList = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            mList.add(new DefautItAbsDialogContentContentItemBean("aa" + i, i, "aa" + i));
-        }
-        final List<DefaultDialogBottomBean> mBottomList = new ArrayList<>();
-
-        mBottomList.add(new DefaultDialogBottomBean(R.color.xui_config_color_white, "知道了"));
-
         View mDialogTitleView = LayoutInflater.from(this).inflate(R.layout.dialog_title_structions_layout, mLlContainer, false);
         View mDialogContentView = LayoutInflater.from(this).inflate(R.layout.dialog_content_structions_layout, mLlContainer, false);
         View mDialogBottomView = LayoutInflater.from(this).inflate(R.layout.dialog_bottom_structions_layout, mLlContainer, false);
